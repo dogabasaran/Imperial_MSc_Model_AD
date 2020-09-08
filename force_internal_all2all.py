@@ -16,10 +16,10 @@ a single inverse correlation matrix for the network. There is no longer a feedba
 
 def architectureC():
     # Set up network parameters
-    N = 1000
+    N = 10000
     print("Recurrent network has {} neurons".format(N))
     p = 1.0
-    g = 1.5        # g greater than 1 leads to chaoric networks
+    g = 1.5        # g greater than 1 leads to chaotic networks
     alpha = 1.0
     nsecs = 1440
     dt = .1  #.1
@@ -60,25 +60,10 @@ def architectureC():
     '''
     discontinuous
     '''
-    # noise = np.random.normal(0,.08,14400)
-    #
-    # amplitude = 4
-    # counter = 0
-    # counter2 = 0
-    # ft = np.zeros(nsecs*10)
-    # for idx, _ in enumerate(simtime):
-    #     if counter < 1000:
-    #         ft[idx] = 1
-    #         counter += 1
-    #     else:
-    #         ft[idx] = 0
-    #         counter2 += 1
-    #     if counter2 == 1000:
-    #         counter = 0
-    #         counter2 = 0
-    # ft = (ft - 0.5) * amplitude
-    # ft = ft+noise
-    #
+    # noise = np.random.normal(0,.02,14400)
+    # tophat = 0.7 * signal.square( np.pi / 50 * simtime)
+    # tophat = tophat + noise
+    # ft = tophat
     '''
     aperiodic
     '''
